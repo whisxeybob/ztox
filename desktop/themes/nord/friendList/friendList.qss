@@ -1,52 +1,44 @@
 QScrollArea
 {
-    background: #2E3440;
-    border: none;
-}
-
-QScrollArea > QWidget
-{
-    background: #2E3440;
-}
-
-QScrollArea > QWidget > QWidget
-{
-    background: transparent;
-}
-
-FriendListWidget, QWidget#friendList
-{
-    background: #2E3440;
+    background: @themeMedium;
 }
 
 QScrollBar:vertical
 {
-    background: transparent;
-    width: 10px;
-    padding: 4px 2px 4px 2px;
+    background: @themeMedium;
+    width: 16px;
+    padding: 0px 3px 0px 3px;
 }
 
 QScrollBar:handle:vertical
 {
-    background: #4C566A;
-    min-height: 32px;
-    border-radius: 4px;
-    margin: 0px;
+    background: @themeDark;
+    min-height: 20px;
+    border-radius: 5px;
+    margin: 3px 0px 3px 0px;
 }
 
 QScrollBar:handle:vertical:hover
 {
-    background: #5E6779;
+    background: @themeMediumDark;
 }
 
 QScrollBar:handle:vertical:pressed
 {
-    background: #88C0D0;
+    background: @themeDark;
 }
 
-QScrollBar:add-line:vertical, QScrollBar:sub-line:vertical
+QScrollBar:add-line:vertical
 {
     height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar:sub-line:vertical
+{
+    height: 0px;
+    subcontrol-position: top;
     subcontrol-origin: margin;
 }
 
@@ -57,42 +49,34 @@ QScrollBar:add-page:vertical, QScrollBar::sub-page:vertical
 
 QWidget#circleWidgetContainer > QFrame#line
 {
-    color: transparent;
-    background: transparent;
+    color: #ECEFF4;
 }
 
 QWidget#circleWidgetContainer
 {
-    background-color: transparent;
-    border-radius: 10px;
-    margin: 2px 6px;
+    background-color: @themeMedium;
 }
 
 QWidget#circleWidgetContainer:hover
 {
-    background-color: #3B4252;
+    background-color: @themeLight;
 }
 
 QWidget#circleWidgetContainer QLineEdit
 {
-    background-color: #3B4252;
-    border: 1px solid #4C566A;
-    border-radius: 8px;
-    padding: 4px 8px;
-    color: #ECEFF4;
-    selection-background-color: #5E81AC;
+    background-color: @themeLight;
 }
 
 QWidget#circleWidgetContainer > QLabel#status
 {
     font: @small;
-    color: #D8DEE9;
+    color: @mainText;
 }
 
 QWidget#circleWidgetContainer > QLabel#name
 {
     font: @big;
-    color: #ECEFF4;
+    color: #4C566A;
 }
 
 QLabel {

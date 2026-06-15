@@ -1,41 +1,33 @@
 QTextEdit
 {
-    border: 1px solid #434C5E;
-    border-radius: 16px;
-    background: #3B4252;
-    color: #ECEFF4;
-    padding: 10px 14px;
-    selection-background-color: #5E81AC;
-    font-size: 14px;
+    border-color: @groundExtra;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+    background: @groundBase;
 }
 
 QTextEdit:hover
 {
-    border-color: #4C566A;
-    background: #434C5E;
+    border-color: #2E3440;
 }
 
-QTextEdit:focus
+QTextEdit:pressed
 {
-    border-color: #88C0D0;
-    background: #434C5E;
+    border-color: #434C5E;
 }
 
 QTextEdit#conference
 {
-    border: 1px solid #434C5E;
-    border-radius: 16px;
-    background: #3B4252;
-    color: #ECEFF4;
-    padding: 10px 14px;
+    /*border-radius: 0 6px 6px 0; would use to round corners in conference, but Qt's implementation seems to be bugged*/
+    border: 1px solid #2E3440;
 }
 
 QTextEdit#conference:hover
 {
-    border-color: #4C566A;
+    border-color: #2E3440;
 }
 
-QTextEdit#conference:focus
+QTextEdit#conference:pressed
 {
-    border-color: #88C0D0;
+    border-color: #434C5E;
 }

@@ -5,10 +5,10 @@ QLabel
 
 QLabel:disabled
 {
-    color: #2E3440;
+    color: #2d2b2b;
 }
 
 QLabel[state="red"]
 {
-    color: #BF616A;
+    color: #e84747;
 }

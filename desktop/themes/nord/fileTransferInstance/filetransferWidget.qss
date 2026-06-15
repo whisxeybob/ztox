@@ -1,4 +1,4 @@
-[fontColor="white"] QLabel {
+[fontColor="#ECEFF4"] QLabel {
         color: @mainText;
         font: @big;
 }

@@ -22,7 +22,7 @@ QPushButton:pressed
 
 QPushButton[enabled="false"]
 {
-    background-color: #4C566A;
+    background-color: #919191;
 }
 
 QPushButton:focus
