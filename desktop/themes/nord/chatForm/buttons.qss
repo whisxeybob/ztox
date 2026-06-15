@@ -3,34 +3,66 @@
 QAbstractButton#emoteButton
 {
     background-image: url("@getImagePath(chatForm/emoteButton.svg)");
+    background-color: transparent;
+    border: none;
     border-top-right-radius: 5px;
     width: 24px;
     height: 24px;
 }
 
+QAbstractButton#emoteButton:hover
+{
+    background-color: #3B4252;
+}
+
 QAbstractButton#fileButton
 {
     background-image: url("@getImagePath(chatForm/fileButton.svg)");
+    background-color: transparent;
+    border: none;
     border-bottom-right-radius: 5px;
     width: 24px;
     height: 24px;
 }
 
+QAbstractButton#fileButton:hover
+{
+    background-color: #3B4252;
+}
+
 QAbstractButton#screenshotButton
 {
     background-image: url("@getImagePath(chatForm/screenshotButton.svg)");
+    background-color: transparent;
+    border: none;
     border-top-left-radius: 5px;
     width: 24px;
     height: 24px;
 }
 
+QAbstractButton#screenshotButton:hover
+{
+    background-color: #3B4252;
+}
+
 QAbstractButton#sendButton
 {
     background-image: url("@getImagePath(chatForm/sendButton.svg)");
+    background-color: #5E81AC;
+    border: none;
     border-radius: 5px;
     width: 50px;
     height: 50px;
+}
 
+QAbstractButton#sendButton:hover
+{
+    background-color: #88C0D0;
+}
+
+QAbstractButton#sendButton:pressed
+{
+    background-color: #5E81AC;
 }
 
 /* Header */
@@ -114,7 +146,7 @@ QAbstractButton#startButton
     border-radius: 5px;
     width: 60px;
     height: 35px;
-    color: #ECEFF4
+    color: #ECEFF4;
 }
 
 /* Common */
@@ -129,7 +161,7 @@ QAbstractButton
 QAbstractButton:disabled
 {
     color: #4C566A;
-    background-color: #4C566A;
+    background-color: #3B4252;
 }
 
 QAbstractButton:focus
@@ -144,12 +176,12 @@ QAbstractButton[state="green"]
 
 QAbstractButton[state="green"]:hover
 {
-    background-color: #A3BE8C;
+    background-color: #B5CDA1;
 }
 
 QAbstractButton[state="green"]:pressed
 {
-    background-color: #A3BE8C;
+    background-color: #94AD7D;
 }
 
 QAbstractButton[state="red"]
@@ -159,25 +191,25 @@ QAbstractButton[state="red"]
 
 QAbstractButton[state="red"]:hover
 {
-    background-color: #BF616A;
+    background-color: #CC7780;
 }
 
 QAbstractButton[state="red"]:pressed
 {
-    background-color: #BF616A;
+    background-color: #A8525B;
 }
 
 QAbstractButton[state="yellow"]
 {
-    background-color: #D08770;
+    background-color: #EBCB8B;
 }
 
 QAbstractButton[state="yellow"]:hover
 {
-    background-color: #EBCB8B;
+    background-color: #F0D69E;
 }
 
 QAbstractButton[state="yellow"]:pressed
 {
-    background-color: #D08770;
+    background-color: #D9B978;
 }

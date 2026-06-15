@@ -3,7 +3,7 @@ body {
 }
 
 p {
-    #ECEFF4-space: pre-wrap;
+    white-space: pre-wrap;
 }
 
 .action {
@@ -13,11 +13,11 @@ p {
 }
 
 .typing {
-    color: #8d8d8d;
+    color: #4C566A;
 }
 
 .quote {
-    color: #279419;
+    color: #A3BE8C;
 }
 
 .alert {

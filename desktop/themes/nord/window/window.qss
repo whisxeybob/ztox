@@ -1,35 +1,20 @@
 Widget#activeWindow
 {
     background-color: #2E3440;
-    border: 2px solid #2E3440;
+    border: 1px solid #3B4252;
 }
 
 Widget#inactiveWindow
 {
     background-color: #2E3440;
-    border: 2px solid #2E3440;
+    border: 1px solid #3B4252;
 }
-/*
-Widget#titleBar
-{
-    border: 10px solid #2E3440;
-    border-top: 0px solid transparent;
-    background-color: #2E3440;
-}
-
-Widget#titleBarInactive
-{
-    border: 5px solid #2E3440;
-    border-top: 0px solid transparent;
-    background-color: #F1F1F1;
-}*/
 
 QToolButton#tbMenu
 {
     border: 0px solid transparent;
     background-color: transparent;
 }
-
 
 QPushButton#minimizeButton
 {

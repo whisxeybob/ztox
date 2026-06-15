@@ -5,5 +5,5 @@ NotificationEdgeWidget
 
 NotificationEdgeWidget > QLabel
 {
-    color: #ECEFF4;
+    color: white;
 }

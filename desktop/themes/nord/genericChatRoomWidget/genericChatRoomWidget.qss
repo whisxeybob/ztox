@@ -1,21 +1,36 @@
 GenericChatroomWidget {
-    background-color: @themeMedium; /* Base background color */
+    background-color: transparent;
+    border-radius: 12px;
+    margin: 2px 8px;
+    padding: 8px 10px;
 }
+
 GenericChatroomWidget:hover {
-    background-color: @themeLight; /* On mouse over */
+    background-color: #3B4252;
 }
+
 GenericChatroomWidget[active="true"] {
-    background-color: @groundBase; /* When active */
+    background-color: #434C5E;
+    border-left: 3px solid #88C0D0;
 }
+
 CroppingLabel#statusMessageLabelObj {
-    color: @groundExtra; /* Base color */
+    color: #81A1C1;
+    font-size: 11px;
+    padding-top: 2px;
 }
+
 CroppingLabel#statusMessageLabelObj[active="true"] {
-    color: @statusActive; /* Color when active */
+    color: #D8DEE9;
 }
+
 CroppingLabel#nameLabelObj {
-    color: @groundExtra; /* Base color */
+    color: #D8DEE9;
+    font-size: 14px;
+    font-weight: 500;
 }
+
 CroppingLabel#nameLabelObj[active="true"] {
-    color: @nameActive; /* Color when active */
+    color: #ECEFF4;
+    font-weight: 600;
 }

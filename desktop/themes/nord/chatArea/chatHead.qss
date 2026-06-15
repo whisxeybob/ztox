@@ -1,34 +1,52 @@
 QLineEdit
 {
-    color: @mainText;
-    background: @groundBase;
-    border: 0px;
+    color: #ECEFF4;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 15px;
+    font-weight: 600;
+    selection-background-color: #5E81AC;
+}
+
+QLineEdit:hover
+{
+    background: #3B4252;
+    border-color: #434C5E;
+}
+
+QLineEdit:focus
+{
+    background: #3B4252;
+    border-color: #88C0D0;
 }
 
 #nameLabel
 {
-    color: @mainText;
-    font: @mediumBold;
-    font-size:12px;
+    color: #ECEFF4;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 2px 0;
 }
 
 #statusLabel
 {
-    color: @statusActive;
-    font: @medium;
-    font-size:12px;
+    color: #81A1C1;
+    font-size: 12px;
+    padding-top: 1px;
 }
 
 #peersLabel
 {
-    color: @statusActive;
-    font: @medium;
-    font-size:12px;
+    color: #81A1C1;
+    font-size: 12px;
 }
 
 QLabel[peerType="our"]
 {
     color: #A3BE8C;
+    font-weight: 600;
 }
 
 QLabel[peerType="muted"]
@@ -38,5 +56,6 @@ QLabel[peerType="muted"]
 
 QLabel[playingAudio="true"]
 {
-    font-weight: bold;
+    font-weight: 600;
+    color: #88C0D0;
 }

@@ -1,28 +1,27 @@
 QPushButton
 {
-    background: none;
-    background-color: @themeMediumDark;
+    background: transparent;
+    background-color: #434C5E;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     text-align: center;
-    width: 20px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
 }
 
 QPushButton:default
 {
-    background-color: @themeMediumDark;
+    background-color: #434C5E;
 }
 
-/*Bugged in Qt, but it's probably better to leave enabled so that users can tell it's clickable*/
 QPushButton:hover
 {
-    background-color: @themeMedium;
+    background-color: #4C566A;
 }
 
 QPushButton:pressed
 {
-    background-color: @themeMediumDark;
+    background-color: #3B4252;
 }
 
 QPushButton:focus
@@ -30,7 +29,7 @@ QPushButton:focus
     outline: none;
 }
 
-QPushButton::menu-indicator {image: none;}
+QPushButton::menu-indicator { image: none; }
 
 QPushButton::menu-indicator:pressed, QPushButton::menu-indicator:open
 {
