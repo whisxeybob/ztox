@@ -1,6 +1,6 @@
 QPushButton
 {
-    background-color: #6bc260;
+    background-color: #A3BE8C;
     background-image: url("@getImagePath(sendButton/sendButton.svg)");
     background-repeat: none;
     background-position: center;
@@ -12,12 +12,12 @@ QPushButton
 
 QPushButton:hover
 {
-    background-color: #79c76f;
+    background-color: #A3BE8C;
 }
 
 QPushButton:pressed
 {
-    background-color: #51b244;
+    background-color: #A3BE8C;
 }
 
 QPushButton:focus

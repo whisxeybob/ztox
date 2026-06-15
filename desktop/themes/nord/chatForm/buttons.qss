@@ -114,7 +114,7 @@ QAbstractButton#startButton
     border-radius: 5px;
     width: 60px;
     height: 35px;
-    color: #fff
+    color: #ECEFF4
 }
 
 /* Common */
@@ -129,7 +129,7 @@ QAbstractButton
 QAbstractButton:disabled
 {
     color: gray;
-    background-color: #515151;
+    background-color: #4C566A;
 }
 
 QAbstractButton:focus
@@ -139,45 +139,45 @@ QAbstractButton:focus
 
 QAbstractButton[state="green"]
 {
-    background-color: #529449;
+    background-color: #A3BE8C;
 }
 
 QAbstractButton[state="green"]:hover
 {
-    background-color: #589f4e;
+    background-color: #A3BE8C;
 }
 
 QAbstractButton[state="green"]:pressed
 {
-    background-color: #437a3c;
+    background-color: #A3BE8C;
 }
 
 QAbstractButton[state="red"]
 {
-    background-color: #9e2525;
+    background-color: #BF616A;
 }
 
 QAbstractButton[state="red"]:hover
 {
-    background-color: #bd2c2c;
+    background-color: #BF616A;
 }
 
 QAbstractButton[state="red"]:pressed
 {
-    background-color: #8f2121;
+    background-color: #BF616A;
 }
 
 QAbstractButton[state="yellow"]
 {
-    background-color: #e6a850;
+    background-color: #D08770;
 }
 
 QAbstractButton[state="yellow"]:hover
 {
-    background-color: #e6bd5d;
+    background-color: #EBCB8B;
 }
 
 QAbstractButton[state="yellow"]:pressed
 {
-    background-color: #e6843e;
+    background-color: #D08770;
 }

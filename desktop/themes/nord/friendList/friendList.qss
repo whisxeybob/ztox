@@ -76,7 +76,7 @@ QWidget#circleWidgetContainer > QLabel#status
 QWidget#circleWidgetContainer > QLabel#name
 {
     font: @big;
-    color: #a3a3a3;
+    color: #4C566A;
 }
 
 QLabel {

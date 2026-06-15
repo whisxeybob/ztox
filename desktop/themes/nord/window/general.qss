@@ -3,7 +3,7 @@ QToolTip
     /* explicit border width is required https://bugreports.qt.io/browse/QTBUG-41313 */
     border: 0px;
     color: black;
-    background: #ffffdc;
+    background: #EBCB8B;
 }
 
 QDialog
@@ -18,19 +18,19 @@ QWidget#contentWidget
 
 QTabWidget
 {
-    background-color: #100f0f;
+    background-color: #2E3440;
 }
 
 QTabBar::tab:selected
 {
-    background: #100f0f;
+    background: #2E3440;
     color: @mainText;
 }
 
 QTabBar::tab:!selected
 {
-    background: #444242;
-    color: #8e8e8e;
+    background: #3B4252;
+    color: #4C566A;
 }
 
 QLabel
@@ -47,12 +47,12 @@ QListView#debugLog
 {
     font-family: "Monospace";
     font-size: 8pt;
-    background-color: #242424;
+    background-color: #2E3440;
 }
 
 QTextEdit, QPlainTextEdit
 {
-    border-color: #514f4f;
+    border-color: #4C566A;
     border-style: solid;
     border-width: 1px 0 1px 1px;
     background: @groundBase;
@@ -77,7 +77,7 @@ QCheckBox
 QCheckBox::indicator {
     width: 12px;
     height: 12px;
-    border: 2px solid #514f4f;
+    border: 2px solid #4C566A;
     border-radius: 2px;
 }
 
@@ -87,7 +87,7 @@ QCheckBox::indicator:checked {
 
 QCheckBox::indicator:checked:pressed,
 QCheckBox::indicator:unchecked:pressed {
-    background: #514f4f;
+    background: #4C566A;
 }
 
 QCheckBox:disabled
@@ -96,7 +96,7 @@ QCheckBox:disabled
 }
 
 QCheckBox:indicator:disabled {
-    border: 2px solid #373535;
+    border: 2px solid #3B4252;
     border-radius: 2px;
 }
 
@@ -112,7 +112,7 @@ QSpinBox, QDoubleSpinBox
 
 QSpinBox:disabled, QDoubleSpinBox:disabled
 {
-    background: #262424;
+    background: #2E3440;
     color: grey;
 }
 
@@ -141,7 +141,7 @@ QLineEdit
 
 QLineEdit:disabled
 {
-    background-color: #262424;
+    background-color: #2E3440;
     color: grey;
 }
 
@@ -172,17 +172,17 @@ QScrollBar:vertical
 /* using last is a bit of a hack, but QTabBar otherwise doesn't allow selecting single tabs */
 QTabBar::tab:last:!selected[update-available=true]
 {
-    background-color: #115508;
+    background-color: #A3BE8C;
 }
 
 QPushButton#updateAvailableButton
 {
-    background-color: #115508;
+    background-color: #A3BE8C;
 }
 
 QScrollBar::handle:vertical
 {
-    background-color: #343232;
+    background-color: #3B4252;
     min-height: 20px;
     border-radius: 3px;
     margin-left: 2px;
@@ -190,12 +190,12 @@ QScrollBar::handle:vertical
 
 QScrollBar::handle:vertical:hover
 {
-    background-color: #3e3c3c;
+    background-color: #3B4252;
 }
 
 QScrollBar::handle:vertical:pressed
 {
-    background-color: #474545;
+    background-color: #3B4252;
 }
 
 QScrollBar::add-line:vertical
@@ -242,19 +242,19 @@ QScrollBar:horizontal
 
 QScrollBar::handle:horizontal
 {
-    background-color: #343232;
+    background-color: #3B4252;
     min-width: 20px;
     border-radius: 2px;
 }
 
 QScrollBar::handle:horizontal:hover
 {
-    background-color: #3e3c3c;
+    background-color: #3B4252;
 }
 
 QScrollBar::handle:horizontal:pressed
 {
-    background-color: #474545;
+    background-color: #3B4252;
 }
 
 QScrollBar::add-line:horizontal
@@ -300,7 +300,7 @@ QRadioButton
 
 QPushButton
 {
-    background: #323030;
+    background: #2E3440;
     color: @mainText;
 }
 

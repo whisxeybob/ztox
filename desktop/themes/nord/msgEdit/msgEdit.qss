@@ -8,26 +8,26 @@ QTextEdit
 
 QTextEdit:hover
 {
-    border-color: #d7d4d1;
+    border-color: #D8DEE9;
 }
 
 QTextEdit:pressed
 {
-    border-color: #46465b;
+    border-color: #434C5E;
 }
 
 QTextEdit#conference
 {
     /*border-radius: 0 6px 6px 0; would use to round corners in conference, but Qt's implementation seems to be bugged*/
-    border: 1px solid #c4c1bd;
+    border: 1px solid #D8DEE9;
 }
 
 QTextEdit#conference:hover
 {
-    border-color: #d7d4d1;
+    border-color: #D8DEE9;
 }
 
 QTextEdit#conference:pressed
 {
-    border-color: #46465b;
+    border-color: #434C5E;
 }

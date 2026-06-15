@@ -1,16 +1,16 @@
 #LoginScreen
 {
-    background-color: #1c1c1c;
+    background-color: #3B4252;
 }
 
 #line
 {
-     color: #757575;
+     color: #4C566A;
 }
 
 #stackedWidget
 {
-    background-color: #100f0f;
+    background-color: #2E3440;
 }
 
 #labelNewProfile,
@@ -18,7 +18,7 @@
 {
     border-style: solid;
     border-width: 15px 0 15px 15px;
-    border-color: #100f0f #100f0f #100f0f #1c1c1c;
+    border-color: #2E3440 #2E3440 #2E3440 #3B4252;
 }
 #labelNewProfile
 {
@@ -47,25 +47,25 @@ QStackedWidget QPushButton
 {
     border-radius:5px;
     padding:5px;
-    background-color: #529449;
+    background-color: #A3BE8C;
 }
 
 #loginButton:hover,
 #importButton:hover,
 #createAccountButton:hover
 {
-    background: #589f4e;
+    background: #A3BE8C;
 }
 
 QMessageBox, QLabel
 {
     color: @mainText;
-    background: #100f0f;
+    background: #2E3440;
 }
 
 QLabel#label_7
 {
-    background: #1c1c1c;
+    background: #3B4252;
 }
 
 QCheckBox, QProgressBar, QComboBox, QLineEdit, QListView
