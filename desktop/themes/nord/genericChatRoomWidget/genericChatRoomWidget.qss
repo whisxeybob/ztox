@@ -3,25 +3,33 @@ GenericChatroomWidget {
 }
 
 GenericChatroomWidget:hover {
-    background-color: #3B4252;
-}
-
-GenericChatroomWidget[active="true"] {
     background-color: #434C5E;
 }
 
+GenericChatroomWidget[active="true"] {
+    background-color: #5E81AC;
+}
+
 CroppingLabel#statusMessageLabelObj {
+    background-color: transparent;
     color: #81A1C1;
 }
 
 CroppingLabel#statusMessageLabelObj[active="true"] {
-    color: #D8DEE9;
+    background-color: transparent;
+    color: #ECEFF4;
 }
 
 CroppingLabel#nameLabelObj {
+    background-color: transparent;
     color: #D8DEE9;
 }
 
 CroppingLabel#nameLabelObj[active="true"] {
+    background-color: transparent;
     color: #ECEFF4;
+}
+
+GenericChatroomWidget > QLabel {
+    background-color: transparent;
 }
