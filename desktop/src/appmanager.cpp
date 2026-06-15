@@ -415,8 +415,8 @@ int AppManager::run()
             });
     PosixSignalNotifier::watchUsrSignals();
 
-    QApplication::setApplicationName("qTox");
-    QApplication::setDesktopFileName("io.github.qtox.qTox");
+    QApplication::setApplicationName("ztox");
+    QApplication::setDesktopFileName("io.github.whisxeybob.ztox");
     QApplication::setApplicationVersion(QStringLiteral("%1, git commit %2 (%3)")
                                             .arg(VersionInfo::gitDescribe())
                                             .arg(VersionInfo::gitVersion())
@@ -471,7 +471,7 @@ int AppManager::run()
     });
 #ifdef Q_OS_WASM
     // Set to portable mode and TCP-only for WASM.
-    parser.process({"qtox", "-D", wasmConfigPath, "-U", "off", "-L", "off"});
+    parser.process({"ztox", "-D", wasmConfigPath, "-U", "off", "-L", "off"});
 #else
     parser.process(*qapp);
 #endif

@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=qTox
+Name=ztox
 GenericName=Tox client
-Comment=Qt 6 based Tox instant messenger for secure communication
+Comment=Privacy-first Tox messenger, Nord-styled. Fork of qTox.
 Comment[cs]=Tox instant messaging založený na Qt 6 pro zabezpečenou komunikaci
 Comment[da]=Tox instant messaging baseret på Qt 6 til sikker kommunikation
 Comment[de]=Tox Instant Messaging auf Basis von Qt 6 für sichere Kommunikation
@@ -23,9 +23,9 @@ Comment[sl]=Takojšnje sporočanje Tox, ki temelji na Qt 6 za varno komunikacijo
 Comment[sv]=Tox instant messaging baserad på Qt 6 för säker kommunikation
 Comment[tr]=Güvenli iletişim için Qt 6 tabanlı Tox anlık mesajlaşma
 Comment[zh]=基于Qt 6的Tox即时通讯，用于安全通信
-TryExec=qtox
-Exec=qtox %u
-Icon=qtox
+TryExec=ztox
+Exec=ztox %u
+Icon=ztox
 Categories=Network;InstantMessaging;Chat;Telephony;VideoConference;
 Terminal=false
 MimeType=x-scheme-handler/tox;application/x-tox;

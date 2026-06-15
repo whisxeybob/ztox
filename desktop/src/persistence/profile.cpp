@@ -258,7 +258,7 @@ bool Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile
     coreAv->start();
 
     if (isNewProfile) {
-        core->setStatusMessage(tr("Toxing on qTox"));
+        core->setStatusMessage(tr("Toxing on ztox"));
         core->setUsername(name);
         onSaveToxSave();
     }
@@ -625,7 +625,7 @@ void Profile::loadDatabase(QString password, IMessageBoxManager& messageBoxManag
         qWarning() << "Couldn't compute salt from public key" << name;
         messageBoxManager
             .showError(QObject::tr("Error"),
-                       QObject::tr("qTox couldn't open your chat logs, they will be disabled."));
+                       QObject::tr("ztox couldn't open your chat logs, they will be disabled."));
     }
     // At this point it's too early to load the personal settings (Nexus will do it), so we always
     // load
@@ -637,7 +637,7 @@ void Profile::loadDatabase(QString password, IMessageBoxManager& messageBoxManag
         qWarning() << "Failed to open database for profile" << name;
         messageBoxManager
             .showError(QObject::tr("Error"),
-                       QObject::tr("qTox couldn't open your chat logs, they will be disabled."));
+                       QObject::tr("ztox couldn't open your chat logs, they will be disabled."));
     }
 }
 

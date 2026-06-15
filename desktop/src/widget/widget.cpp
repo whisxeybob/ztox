@@ -160,7 +160,7 @@ void Widget::init()
 {
     ui->setupUi(this);
 
-    const QIcon themeIcon = QIcon::fromTheme("qtox");
+    const QIcon themeIcon = QIcon::fromTheme("ztox");
     if (!themeIcon.isNull()) {
         setWindowIcon(themeIcon);
     }
@@ -1842,7 +1842,7 @@ ContentLayout* Widget::createContentDialog(DialogType type) const
             restoreGeometry(settings.getDialogSettingsGeometry());
             Translator::registerHandler([this] { retranslateUi(); }, this);
             retranslateUi();
-            setWindowIcon(QIcon(":/img/icons/qtox.svg"));
+            setWindowIcon(QIcon(":/img/icons/ztox.svg"));
             reloadTheme();
 
             connect(core, &Core::usernameSet, this, &Dialog::retranslateUi);
@@ -2641,9 +2641,9 @@ void Widget::connectFriendWidget(FriendWidget& friendWidget) const
 void Widget::formatWindowTitle(const QString& content)
 {
     if (content.isEmpty()) {
-        setWindowTitle("qTox");
+        setWindowTitle("ztox");
     } else {
-        setWindowTitle(content + " - qTox");
+        setWindowTitle(content + " - ztox");
     }
 }
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Originally Copyleft 2016 SkyzohKey <skyzohkey@framasphere.org> for qTox. -->
+<!-- Derived work: ztox. GPL-3.0. -->
+<component type="desktop">
+ <id>io.github.whisxeybob.ztox</id>
+ <launchable type="desktop-id">io.github.whisxeybob.ztox.desktop</launchable>
+ <metadata_license>CC-BY-SA-3.0</metadata_license>
+ <project_license>GPL-3.0</project_license>
+ <name>ztox</name>
+ <summary>Privacy-first Tox messenger with a Nord aesthetic.</summary>
+ <description>
+  <p>
+    ztox is a Tox messenger client derived from qTox, with stronger
+    anonymity defaults and a coherent Nord visual style.
+  </p>
+  <p>Defaults that put privacy first:</p>
+  <ul>
+   <li>SOCKS5/Tor proxy on by default.</li>
+   <li>UDP and LAN discovery off by default — your IP is not leaked to peers.</li>
+   <li>Local group-chat archive so leaving and rejoining does not erase history.</li>
+  </ul>
+  <p>
+    Tox is a peer-to-peer protocol with end-to-end encryption and no central
+    server. ztox does not modify the protocol — it ships safer defaults and
+    a friendlier interface on top of it.
+  </p>
+ </description>
+ <developer id="github.whisxeybob">
+  <name>whisxeybob</name>
+ </developer>
+ <url type="homepage">https://github.com/whisxeybob/ztox</url>
+ <url type="bugtracker">https://github.com/whisxeybob/ztox/issues</url>
+ <project_group>ztox</project_group>
+ <content_rating type="oars-1.0">
+  <content_attribute id="social-chat">intense</content_attribute>
+  <content_attribute id="social-audio">intense</content_attribute>
+ </content_rating>
+ <releases>
+  <release version="0.1.0" date="2026-06-15"/>
+ </releases>
+</component>

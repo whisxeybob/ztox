@@ -23,11 +23,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string notr="true">qTox</string>
+   <string notr="true">ztox</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../res.qrc">
-    <normaloff>:/img/icons/qtox.svg</normaloff>:/img/icons/qtox.svg</iconset>
+    <normaloff>:/img/icons/ztox.svg</normaloff>:/img/icons/ztox.svg</iconset>
   </property>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
@@ -140,7 +140,7 @@ If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</string>
            </property>
            <property name="whatsThis">
-            <string>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it's local to your computer only. qTox developers won't be able to recover your password if lost.</string>
+            <string>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it's local to your computer only. ztox developers won't be able to recover your password if lost.</string>
            </property>
            <property name="accessibleDescription">
             <string>Password input field, you can leave it empty (no password), or type at least 6 characters</string>
@@ -335,7 +335,7 @@ Press Shift+F1 for more information.</string>
          <item>
           <widget class="QCheckBox" name="autoLoginCB">
            <property name="toolTip">
-            <string>If the profile does not have a password, qTox can skip the login screen</string>
+            <string>If the profile does not have a password, ztox can skip the login screen</string>
            </property>
            <property name="accessibleDescription">
             <string>Load automatically checkbox</string>
