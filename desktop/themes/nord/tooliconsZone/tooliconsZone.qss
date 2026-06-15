@@ -2,6 +2,7 @@ QPushButton[update-available=true]
 {
     background-color: #A3BE8C;
     border: none;
+    padding: 12px 8px;
 }
 
 QPushButton:hover[update-available=true]
@@ -14,6 +15,7 @@ QPushButton
 {
     background-color: #2E3440;
     border: none;
+    padding: 12px 8px;
 }
 
 QPushButton:hover
