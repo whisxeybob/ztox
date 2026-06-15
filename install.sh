@@ -18,7 +18,6 @@ ZTOX_REF="${ZTOX_REF:-main}"
 ZTOX_PREFIX="${ZTOX_PREFIX:-$HOME/.local}"
 ZTOX_NO_DEPS="${ZTOX_NO_DEPS:-0}"
 ZTOX_NO_TOXCORE="${ZTOX_NO_TOXCORE:-0}"
-ZTOX_NO_TOR="${ZTOX_NO_TOR:-0}"
 
 c_reset='\033[0m'
 c_bold='\033[1m'
@@ -76,23 +75,12 @@ install_deps_macos() {
   if [ "$ZTOX_NO_TOXCORE" != "1" ]; then
     brew install toxcore >/dev/null
   fi
-  if [ "$ZTOX_NO_TOR" != "1" ]; then
-    brew install tor >/dev/null
-    if ! brew services list 2>/dev/null | awk '$1=="tor"{print $2}' | grep -q started; then
-      say "Starting Tor (brew services)"
-      brew services start tor >/dev/null || warn "Could not auto-start Tor; run 'brew services start tor' manually"
-    else
-      ok "Tor service already running"
-    fi
-  fi
   ok "macOS dependencies installed"
 }
 
 install_deps_apt() {
   say "Installing build dependencies via apt (will use sudo)"
   sudo apt-get update -qq
-  local tor_pkg=""
-  [ "$ZTOX_NO_TOR" != "1" ] && tor_pkg=tor
   sudo apt-get install -y --no-install-recommends \
     build-essential cmake ninja-build pkg-config git ca-certificates \
     qt6-base-dev qt6-tools-dev qt6-tools-dev-tools \
@@ -100,10 +88,7 @@ install_deps_apt() {
     libsodium-dev libopus-dev libvpx-dev libavcodec-dev libavformat-dev \
     libavutil-dev libswscale-dev libavdevice-dev \
     libsqlcipher-dev libopenal-dev libqrencode-dev libexif-dev \
-    libxss-dev libgtk-3-dev wget file $tor_pkg
-  if [ "$ZTOX_NO_TOR" != "1" ] && command -v systemctl >/dev/null 2>&1; then
-    sudo systemctl enable --now tor >/dev/null 2>&1 || warn "Could not auto-start Tor service"
-  fi
+    libxss-dev libgtk-3-dev wget file
   ok "apt dependencies installed"
 }
 
@@ -248,8 +233,8 @@ main() {
   printf "${c_bold}ztox installer${c_reset} — platform=%s pkg=%s prefix=%s ref=%s\n" \
     "$PLATFORM" "$PKG_MGR" "$ZTOX_PREFIX" "$ZTOX_REF"
   warn "This builds ztox from source. Expect 15-40 minutes on first run."
-  warn "Anonymity-by-default profile uses Tor on 127.0.0.1:9050."
-  warn "The installer also installs+starts Tor (set ZTOX_NO_TOR=1 to skip)."
+  warn "ztox does NOT hide your IP from peers by default. If you want that,"
+  warn "set a SOCKS5 proxy (e.g. Tor on 127.0.0.1:9050) in Settings → Advanced."
   echo
 
   install_deps

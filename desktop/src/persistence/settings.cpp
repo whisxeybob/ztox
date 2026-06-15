@@ -123,11 +123,11 @@ Settings::Settings(IMessageBoxManager& messageBoxManager_, Paths::Portable mode)
     , imagePreview{true}
     , chatMaxWindowSize{100}
     , chatWindowChunkSize{50}
-    , forceTCP{true}
-    , enableLanDiscovery{false}
-    , proxyType{ICoreSettings::ProxyType::ptSOCKS5}
-    , proxyAddr{"127.0.0.1"}
-    , proxyPort{9050}
+    , forceTCP{false}
+    , enableLanDiscovery{true}
+    , proxyType{ICoreSettings::ProxyType::ptNone}
+    , proxyAddr{}
+    , proxyPort{0}
     , currentProfile{}
     , currentProfileId{0}
     , enableLogging{true}

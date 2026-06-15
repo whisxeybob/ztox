@@ -51,19 +51,18 @@ cd desktop
 # follow desktop/INSTALL.md — same toolchain as qTox
 ```
 
-## Anonymity defaults
+## Privacy posture (honest version)
 
-A fresh ztox profile starts with:
+ztox is a Tox client. Tox is end-to-end encrypted, peer-to-peer, and has
+no central server — that is automatic and ztox does not change it.
 
-- `proxyType = SOCKS5`, `proxyAddr = 127.0.0.1`, `proxyPort = 9050`
-- `forceTCP = true` (no UDP)
-- `enableLanDiscovery = false`
+What Tox does NOT hide on its own: **your IP address is visible to any
+peer you connect to directly**. ztox does not change this by default.
 
-This assumes a Tor daemon is listening on `127.0.0.1:9050`. If Tor is not
-running, ztox **will not connect to any peer** — by design. To disable the
-SOCKS5 proxy go to *Settings → Advanced → Proxy*. To run Tor on macOS:
-`brew install tor && brew services start tor`. On Debian/Ubuntu:
-`sudo apt install tor && sudo systemctl enable --now tor`.
+If you want to hide your IP from peers, turn on a SOCKS5 proxy in
+*Settings → Advanced → Proxy* (typical setup: Tor on `127.0.0.1:9050`,
+plus *Force TCP*). This is opt-in, not the default — forcing a SOCKS5
+proxy as the default breaks first-run for users who don't run Tor.
 
 ## Roadmap
 
