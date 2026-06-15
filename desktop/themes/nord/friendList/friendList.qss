@@ -1,7 +1,22 @@
 QScrollArea
 {
-    background: @themeMedium;
+    background: #2E3440;
     border: none;
+}
+
+QScrollArea > QWidget
+{
+    background: #2E3440;
+}
+
+QScrollArea > QWidget > QWidget
+{
+    background: transparent;
+}
+
+FriendListWidget, QWidget#friendList
+{
+    background: #2E3440;
 }
 
 QScrollBar:vertical
