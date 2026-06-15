@@ -1,11 +1,11 @@
 QSplitter:handle
 {
-    color: @groundBase;
-    background-color: @groundBase;
+    color: #2E3440;
+    background-color: #2E3440;
 }
 
 QWidget
 {
-    background: @groundBase;
-    color: @mainText;
+    background: #2E3440;
+    color: #ECEFF4;
 }

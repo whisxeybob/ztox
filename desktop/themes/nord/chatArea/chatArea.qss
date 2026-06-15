@@ -1,15 +1,17 @@
 QTextEdit
 {
-    background: @groundBase;
-    color: @mainText;
+    background: #2E3440;
+    color: #ECEFF4;
+    border: none;
 }
 
 QGraphicsView
 {
     border: none;
+    background: #2E3440;
 }
 
 QWidget
 {
-    background: @groundBase;
+    background: #2E3440;
 }

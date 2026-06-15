@@ -1,35 +1,20 @@
 Widget#activeWindow
 {
-    background-color: #D8DEE9;
-    border: 2px solid #D8DEE9;
+    background-color: #2E3440;
+    border: 1px solid #3B4252;
 }
 
 Widget#inactiveWindow
 {
-    background-color: #ECEFF4;
-    border: 2px solid #D8DEE9;
+    background-color: #2E3440;
+    border: 1px solid #3B4252;
 }
-/*
-Widget#titleBar
-{
-    border: 10px solid #D8DEE9;
-    border-top: 0px solid transparent;
-    background-color: #D8DEE9;
-}
-
-Widget#titleBarInactive
-{
-    border: 5px solid #D8DEE9;
-    border-top: 0px solid transparent;
-    background-color: #D8DEE9;
-}*/
 
 QToolButton#tbMenu
 {
     border: 0px solid transparent;
     background-color: transparent;
 }
-
 
 QPushButton#minimizeButton
 {
