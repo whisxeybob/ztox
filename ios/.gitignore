@@ -1,0 +1,17 @@
+# Xcode build output
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# XcodeGen output (regenerable from project.yml)
+ZtoxiOS.xcodeproj/
+
+# Toxcore framework build cache
+_xcframework-build/
+Frameworks/
+
+# Misc
+.DS_Store
+*.swp

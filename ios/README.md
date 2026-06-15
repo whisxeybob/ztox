@@ -1,69 +1,92 @@
-# ztox iOS — roadmap
+# ztox iOS
 
-The iOS client does not exist yet. This file exists so the trade-offs are
-written down before code is.
+SwiftUI client. Status: **scaffold** — UI is wired up against a stubbed
+`ToxRuntime`. The real `c-toxcore` backend gets wired in after running
+`scripts/build-toxcore-xcframework.sh` (requires Xcode).
 
-## Why this is hard
+## Quick start (when Xcode is installed)
 
-Tox is a P2P protocol with no central server. iOS is hostile to long-lived
-P2P sockets on three independent levels:
+```sh
+brew install xcodegen
+cd ios
+xcodegen          # generates ZtoxiOS.xcodeproj from project.yml
+open ZtoxiOS.xcodeproj
+# Cmd+R to run in the iOS simulator
+```
 
-1. **Background networking.** iOS suspends apps within ~30 seconds of
-   backgrounding. A suspended app has no socket and no DHT presence.
-2. **No push without a server.** APNS requires a sender. Tox has no sender.
-   To get a push when a message arrives, *something* online must observe
-   the message and call APNS — which is a relay, which is the centralization
-   the protocol exists to avoid.
-3. **App Store review.** Apps that "act as a server" or use unconventional
-   network behavior get extra scrutiny. Possible but non-zero friction.
+The first launch shows **Create profile** → username field → tap. After
+that you see an empty contact list with `+` in the top right to add a
+friend by Tox ID (76 hex chars).
 
-Every prior iOS Tox client (Antidote was the most serious attempt) shipped
-and then went dormant. None of them solved the above.
+## Wiring up the real Tox backend
 
-## Architecture options
+The current scaffold runs entirely in Swift with no network — friend
+requests don't actually go out, messages stay local. To make it real:
 
-### Option A — foreground-only client
-The app is online only when the user is in it. No push. No background
-delivery. Honest about what the protocol can and cannot do.
-- **Pro:** Zero centralization. No new infrastructure. Matches the Tox
-  threat model.
-- **Con:** Useless as a primary messenger. Fine as a companion to the
-  desktop client.
+1. **Install Xcode** from the App Store (~15 GB, 30–60 min download).
+2. **Build the toxcore xcframework:**
+   ```sh
+   bash ios/scripts/build-toxcore-xcframework.sh
+   ```
+   Produces `ios/Frameworks/CToxcore.xcframework` from the upstream
+   TokTok/c-toxcore for arm64-device + arm64-simulator + x86_64-simulator.
+3. **Edit `project.yml`:** uncomment the `FRAMEWORK_SEARCH_PATHS` and
+   `dependencies:` block so XcodeGen links the xcframework.
+4. **Replace the stub in `ZtoxiOS/Models/ToxRuntime.swift`** — every
+   method has a `STUB` / `Real impl:` comment showing the equivalent
+   `tox_*` C call. The Swift surface (`@Published var connection`,
+   `addFriend`, `send`) stays the same, so views don't change.
+5. `xcodegen && open ZtoxiOS.xcodeproj` and run.
 
-### Option B — push-relay node
-ztox operates a relay node (or the user runs their own) that stays online,
-receives messages on behalf of the user, and triggers APNS to wake the app.
-The app then connects, downloads the queued messages from the relay, and
-the relay forgets them.
-- **Pro:** Real-time delivery, works like a normal messenger.
-- **Con:** The relay sees ciphertext metadata (who messages whom, when,
-  how big). This is the same trade-off Signal makes — and the same one
-  Tox was designed to avoid. Must be opt-in, never the default.
+## Architecture (v1)
 
-### Option C — friend-as-relay
-A trusted contact's desktop client acts as the user's relay. No
-infrastructure, but only works for users who have a friend running ztox
-desktop 24/7.
+**Foreground-only.** The app is online while the user has it open. iOS
+suspends background sockets within ~30 s, so any background-presence
+story needs a push-relay server, which trades anonymity for delivery
+and is intentionally out of scope for v1. See the project root README
+for the trade-off.
 
-We start with A. B and C are tracked as separate proposals.
+That means:
+- No push notifications. Messages arrive when you open the app.
+- 1:1 chat works fully (text first; AV is a follow-up).
+- Group chats (NGC) follow the same constraint as desktop — history is
+  whatever the client saw while online.
 
-## Tech stack (when we start)
+## File layout
 
-- **Language:** Swift 5.9, SwiftUI for the UI layer.
-- **Tox core:** `c-toxcore` cross-compiled as a static xcframework for
-  arm64 device + arm64/x86_64 simulator. Wrapped in a thin Swift API
-  layer that mirrors the surface used by `desktop/src/core`.
-- **Persistence:** GRDB (SQLite). NGC archive in the same schema as the
-  desktop archive to make a future sync feature cheap.
-- **Theming:** A `NordPalette.swift` generated from `shared/nord/palette.ini`.
-- **Min target:** iOS 16. SwiftUI before iOS 16 is too painful for the gain.
+```
+ios/
+├── project.yml                          XcodeGen spec — single source of truth
+├── ZtoxiOS/
+│   ├── App.swift                        @main, owns ToxRuntime
+│   ├── Theme/
+│   │   └── Nord.swift                   Color tokens, mirrors shared/nord/palette.ini
+│   ├── Models/
+│   │   ├── ToxRuntime.swift             ObservableObject — stub today, real Tox tomorrow
+│   │   └── Friend.swift                 Friend + Message structs
+│   └── Views/
+│       ├── RootView.swift               Profile-setup gate
+│       ├── ProfileSetupView.swift       First-run username screen
+│       ├── ContactListView.swift        Friend list + nav
+│       ├── ContactRow                   (in same file)
+│       ├── AddFriendSheet.swift         Tox ID + greeting form
+│       ├── ProfileSheet.swift           Self profile + Tox ID copy
+│       └── ChatView.swift               Messages + composer
+├── scripts/
+│   └── build-toxcore-xcframework.sh     Cross-compiles c-toxcore for iOS
+└── README.md                            This file.
+```
 
-## What needs to exist before writing Swift
+## Min deployment
 
-1. Decision on Option A vs B vs C as the v1 default.
-2. A working `c-toxcore.xcframework` build pipeline (script in
-   `ios/scripts/build-toxcore.sh`, not yet written).
-3. The NGC local-archive design from the desktop side — so iOS inherits
-   it instead of reinventing it.
+iOS 16. SwiftUI features below 16 are too painful to backport for the
+gain.
 
-Open this file again when (1)-(3) are done.
+## What this scaffold does NOT do
+
+- **Voice / video calls.** Requires `toxav` + AVFoundation pipeline.
+  Separate ~30–50 h of work; placeholders are in `ChatView.swift`.
+- **File transfers.** Requires `tox_file_*` + Files app integration.
+- **Push delivery.** Needs a relay server architecture decision first.
+- **App Store submission.** Needs an Apple Developer account ($99/yr)
+  and code signing setup; out of scope.
