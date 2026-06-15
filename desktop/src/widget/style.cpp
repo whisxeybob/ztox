@@ -55,6 +55,7 @@ namespace {
 const QLatin1String ThemeSubFolder{"themes/"};
 const QLatin1String BuiltinThemeDefaultPath{":themes/default/"};
 const QLatin1String BuiltinThemeDarkPath{":themes/dark/"};
+const QLatin1String BuiltinThemeNordPath{":themes/nord/"};
 
 // helper functions
 QFont appFont(int pixelSize, QFont::Weight weight)
@@ -88,6 +89,7 @@ const QList<ThemeNameColor> themeNameColors = {
     {MainTheme::Dark, QObject::tr("Dark olive"), QColor("#4d5f00")},
     {MainTheme::Dark, QObject::tr("Dark red"), QColor("#7a210d")},
     {MainTheme::Dark, QObject::tr("Dark violet"), QColor("#280d6c")},
+    {MainTheme::Nord, QObject::tr("Nord"), QColor("#88C0D0")},
 };
 
 using ColorPalette = Style::ColorPalette;
@@ -350,6 +352,7 @@ void Style::setThemeColor(int themeColor, int color)
             QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Light);
             break;
         case MainTheme::Dark:
+        case MainTheme::Nord:
             QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Dark);
             break;
         }
@@ -444,9 +447,13 @@ void Style::initDictColor()
 
 QString Style::getThemePath(int themeColor)
 {
-    if (themeNameColors[themeColor].type == MainTheme::Dark) {
+    switch (themeNameColors[themeColor].type) {
+    case MainTheme::Nord:
+        return BuiltinThemeNordPath;
+    case MainTheme::Dark:
         return BuiltinThemeDarkPath;
+    case MainTheme::Light:
+        break;
     }
-
     return BuiltinThemeDefaultPath;
 }

@@ -55,7 +55,8 @@ public:
     enum class MainTheme
     {
         Light,
-        Dark
+        Dark,
+        Nord
     };
     Q_ENUM(MainTheme)
 

@@ -51,8 +51,19 @@ cd desktop
 # follow desktop/INSTALL.md — same toolchain as qTox
 ```
 
-The Nord theme palette is at `desktop/themes/nord/palette.ini`. Wiring it
-into the in-app theme picker is tracked as an open task — see the roadmap.
+## Anonymity defaults
+
+A fresh ztox profile starts with:
+
+- `proxyType = SOCKS5`, `proxyAddr = 127.0.0.1`, `proxyPort = 9050`
+- `forceTCP = true` (no UDP)
+- `enableLanDiscovery = false`
+
+This assumes a Tor daemon is listening on `127.0.0.1:9050`. If Tor is not
+running, ztox **will not connect to any peer** — by design. To disable the
+SOCKS5 proxy go to *Settings → Advanced → Proxy*. To run Tor on macOS:
+`brew install tor && brew services start tor`. On Debian/Ubuntu:
+`sudo apt install tor && sudo systemctl enable --now tor`.
 
 ## Roadmap
 
