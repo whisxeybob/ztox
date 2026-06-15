@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>ztox</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<div id="app"></div>
+
+<template id="t-login">
+  <section class="login">
+    <div class="login-card">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-name">ztox</div>
+        <div class="brand-sub">Privacy-first Tox messenger</div>
+      </div>
+      <label>
+        <span>Username</span>
+        <input id="login-name" type="text" autocomplete="off" autocapitalize="off" placeholder="e.g. anton" maxlength="32" />
+      </label>
+      <label>
+        <span>Room</span>
+        <input id="login-room" type="text" autocomplete="off" autocapitalize="off" placeholder="lobby" maxlength="64" value="lobby" />
+      </label>
+      <button id="login-enter">Join</button>
+      <p class="login-note">
+        v0.1 web preview. Real Tox protocol is on the way — current build uses a server-side relay.
+      </p>
+    </div>
+  </section>
+</template>
+
+<template id="t-chat">
+  <section class="chat">
+    <aside class="sidebar">
+      <header class="sidebar-head">
+        <div class="self-row">
+          <div class="avatar" id="self-avatar"></div>
+          <div class="self-text">
+            <div class="self-name" id="self-name"></div>
+            <div class="self-status">Toxing on ztox web</div>
+          </div>
+          <div class="status-dot online" title="online"></div>
+        </div>
+      </header>
+      <div class="search-wrap">
+        <input class="search" placeholder="Search contacts" />
+      </div>
+      <ul class="roster" id="roster"></ul>
+      <footer class="sidebar-foot">
+        <button class="icon-btn" title="Add">+</button>
+        <button class="icon-btn" title="Conferences">⌬</button>
+        <button class="icon-btn" title="Sort">⇅</button>
+        <button class="icon-btn" title="Settings">⚙</button>
+      </footer>
+    </aside>
+    <main class="chat-pane">
+      <header class="chat-head">
+        <div class="avatar small" id="peer-avatar"></div>
+        <div class="head-text">
+          <div class="peer-name" id="peer-name">Room</div>
+          <div class="peer-sub" id="peer-sub">—</div>
+        </div>
+      </header>
+      <ol class="messages" id="messages"></ol>
+      <footer class="composer">
+        <input id="msg-input" type="text" placeholder="Type your message here…" autocomplete="off" />
+        <button id="msg-emoji" class="composer-icon" title="Emoji">☺</button>
+        <button id="msg-attach" class="composer-icon" title="Attach">⌘</button>
+        <button id="msg-send" class="composer-send" title="Send">›</button>
+      </footer>
+    </main>
+  </section>
+</template>
+
+<script src="/app.js" type="module"></script>
+</body>
+</html>
