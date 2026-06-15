@@ -1,103 +1,175 @@
 QToolTip
 {
-    /* explicit border width is required https://bugreports.qt.io/browse/QTBUG-41313 */
-    border: 0px;
-    color: black;
-    background: #EBCB8B;
+    border: 1px solid #4C566A;
+    border-radius: 6px;
+    color: #ECEFF4;
+    background: #3B4252;
+    padding: 4px 8px;
 }
 
 QDialog
 {
-    background: @groundBase;
+    background: #2E3440;
 }
 
 QWidget#contentWidget
 {
-    background: @groundBase;
+    background: #2E3440;
 }
 
 QTabWidget
 {
     background-color: #2E3440;
+    border: none;
+}
+
+QTabBar::tab
+{
+    padding: 8px 16px;
+    margin: 0 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    min-width: 80px;
 }
 
 QTabBar::tab:selected
 {
-    background: #2E3440;
-    color: @mainText;
+    background: #434C5E;
+    color: #ECEFF4;
+    font-weight: 600;
+    border-bottom: 2px solid #88C0D0;
 }
 
 QTabBar::tab:!selected
 {
     background: #3B4252;
-    color: #4C566A;
+    color: #81A1C1;
+}
+
+QTabBar::tab:!selected:hover
+{
+    background: #434C5E;
+    color: #D8DEE9;
 }
 
 QLabel
 {
-    color: @mainText;
+    color: #ECEFF4;
 }
 
 QListView
 {
-    color: @mainText;
+    color: #ECEFF4;
+    background-color: #2E3440;
+    border: none;
+    outline: none;
+}
+
+QListView::item
+{
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+QListView::item:hover
+{
+    background-color: #3B4252;
+}
+
+QListView::item:selected
+{
+    background-color: #434C5E;
+    color: #ECEFF4;
 }
 
 QListView#debugLog
 {
-    font-family: "Monospace";
-    font-size: 8pt;
+    font-family: "Menlo", "Monaco", "Monospace";
+    font-size: 11px;
     background-color: #2E3440;
 }
 
 QTextEdit, QPlainTextEdit
 {
-    border-color: #4C566A;
-    border-style: solid;
-    border-width: 1px 0 1px 1px;
-    background: @groundBase;
-    color: @mainText;
+    border: 1px solid #434C5E;
+    border-radius: 10px;
+    background: #3B4252;
+    color: #ECEFF4;
+    padding: 6px 10px;
+    selection-background-color: #5E81AC;
+}
+
+QTextEdit:focus, QPlainTextEdit:focus
+{
+    border-color: #88C0D0;
 }
 
 QListWidget
 {
-    background-color: @groundBase;
+    background-color: #2E3440;
+    border: 1px solid #3B4252;
+    border-radius: 8px;
+    outline: none;
+}
+
+QListWidget::item
+{
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+QListWidget::item:hover
+{
+    background-color: #3B4252;
+}
+
+QListWidget::item:selected
+{
+    background-color: #434C5E;
 }
 
 QMessageBox
 {
-    background-color: @groundBase;
+    background-color: #2E3440;
 }
 
 QCheckBox
 {
-    color: @mainText;
+    color: #ECEFF4;
+    spacing: 8px;
 }
 
 QCheckBox::indicator {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     border: 2px solid #4C566A;
-    border-radius: 2px;
+    border-radius: 4px;
+    background: #3B4252;
+}
+
+QCheckBox::indicator:hover {
+    border-color: #88C0D0;
 }
 
 QCheckBox::indicator:checked {
     image: url("@getImagePath(settings/checkboxChecked.svg)");
+    background: #5E81AC;
+    border-color: #5E81AC;
 }
 
 QCheckBox::indicator:checked:pressed,
 QCheckBox::indicator:unchecked:pressed {
-    background: #4C566A;
+    background: #88C0D0;
 }
 
 QCheckBox:disabled
 {
-    color: grey;
+    color: #4C566A;
 }
 
 QCheckBox:indicator:disabled {
     border: 2px solid #3B4252;
-    border-radius: 2px;
+    background: #2E3440;
 }
 
 QCheckBox:indicator:checked:disabled {
@@ -106,48 +178,110 @@ QCheckBox:indicator:checked:disabled {
 
 QSpinBox, QDoubleSpinBox
 {
-    background: @groundBase;
-    color: @mainText;
+    background: #3B4252;
+    color: #ECEFF4;
+    border: 1px solid #434C5E;
+    border-radius: 8px;
+    padding: 4px 8px;
+    selection-background-color: #5E81AC;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus
+{
+    border-color: #88C0D0;
 }
 
 QSpinBox:disabled, QDoubleSpinBox:disabled
 {
     background: #2E3440;
-    color: grey;
+    color: #4C566A;
 }
 
 QGroupBox
 {
-    color: @mainText;
-    background-color: @groundBase;
+    color: #ECEFF4;
+    background-color: #2E3440;
+    border: 1px solid #3B4252;
+    border-radius: 10px;
+    margin-top: 14px;
+    padding-top: 10px;
     font: @bigBold;
+}
+
+QGroupBox::title
+{
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 8px;
+    left: 10px;
+    color: #88C0D0;
 }
 
 QComboBox
 {
-    color: @mainText;
-    background-color: @groundBase;
+    color: #ECEFF4;
+    background-color: #3B4252;
+    border: 1px solid #434C5E;
+    border-radius: 8px;
+    padding: 4px 10px;
+    min-height: 20px;
+}
+
+QComboBox:hover
+{
+    border-color: #4C566A;
+}
+
+QComboBox:focus
+{
+    border-color: #88C0D0;
+}
+
+QComboBox::drop-down
+{
+    border: none;
+    width: 24px;
 }
 
 QComboBox QAbstractItemView {
-    background-color: @groundBase;
+    background-color: #3B4252;
+    border: 1px solid #4C566A;
+    border-radius: 8px;
+    selection-background-color: #5E81AC;
+    padding: 4px;
+    outline: none;
 }
 
 QLineEdit
 {
-    background: @groundBase;
-    color: @mainText;
+    background: #3B4252;
+    color: #ECEFF4;
+    border: 1px solid #434C5E;
+    border-radius: 8px;
+    padding: 6px 10px;
+    selection-background-color: #5E81AC;
+}
+
+QLineEdit:hover
+{
+    border-color: #4C566A;
+}
+
+QLineEdit:focus
+{
+    border-color: #88C0D0;
 }
 
 QLineEdit:disabled
 {
     background-color: #2E3440;
-    color: grey;
+    color: #4C566A;
 }
 
 QScrollArea
 {
-    background-color: @groundBase;
+    background-color: #2E3440;
+    border: none;
 }
 
 QScrollArea > QWidget > QWidget
@@ -157,75 +291,53 @@ QScrollArea > QWidget > QWidget
 
 QScrollArea::corner
 {
-    background-color: @groundBase;
+    background-color: #2E3440;
     border: none;
 }
 
 QScrollBar:vertical
 {
     background: transparent;
-    width: 12px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    width: 8px;
+    margin: 4px 2px;
 }
 
-/* using last is a bit of a hack, but QTabBar otherwise doesn't allow selecting single tabs */
 QTabBar::tab:last:!selected[update-available=true]
 {
     background-color: #A3BE8C;
+    color: #2E3440;
 }
 
 QPushButton#updateAvailableButton
 {
     background-color: #A3BE8C;
+    color: #2E3440;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-weight: 600;
 }
 
 QScrollBar::handle:vertical
 {
-    background-color: #3B4252;
-    min-height: 20px;
-    border-radius: 3px;
-    margin-left: 2px;
+    background-color: #434C5E;
+    min-height: 32px;
+    border-radius: 4px;
 }
 
 QScrollBar::handle:vertical:hover
 {
-    background-color: #3B4252;
+    background-color: #4C566A;
 }
 
 QScrollBar::handle:vertical:pressed
 {
-    background-color: #3B4252;
+    background-color: #88C0D0;
 }
 
-QScrollBar::add-line:vertical
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical
 {
-    background-color: white;
+    background: transparent;
     height: 0px;
-    subcontrol-position: bottom;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:vertical
-{
-    background-color: white;
-    height: 0px;
-    subcontrol-position: top;
-    subcontrol-origin: margin;
-}
-
-QScrollBar:QScrollBar::down-arrow:vertical
-{
-    width: 10;
-    height: 10px;
-    background-color: white;
-}
-
-QScrollBar:QScrollBar::up-arrow:vertical
-{
-    width: 10px;
-    height: 10px;
-    background-color: white;
 }
 
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
@@ -236,55 +348,31 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
 QScrollBar:horizontal
 {
     background: transparent;
-    height: 10px;
-    margin: 0 2px 0 2px;
+    height: 8px;
+    margin: 2px 4px;
 }
 
 QScrollBar::handle:horizontal
 {
-    background-color: #3B4252;
-    min-width: 20px;
-    border-radius: 2px;
+    background-color: #434C5E;
+    min-width: 32px;
+    border-radius: 4px;
 }
 
 QScrollBar::handle:horizontal:hover
 {
-    background-color: #3B4252;
+    background-color: #4C566A;
 }
 
 QScrollBar::handle:horizontal:pressed
 {
-    background-color: #3B4252;
+    background-color: #88C0D0;
 }
 
-QScrollBar::add-line:horizontal
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal
 {
-    background-color: white;
+    background: transparent;
     width: 0px;
-    subcontrol-position: right;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:horizontal
-{
-    background-color: white;
-    width: 0px;
-    subcontrol-position: left;
-    subcontrol-origin: margin;
-}
-
-QScrollBar:QScrollBar::down-arrow:horizontal
-{
-    width: 10;
-    height: 10px;
-    background-color: white;
-}
-
-QScrollBar:QScrollBar::up-arrow:horizontal
-{
-    width: 10px;
-    height: 10px;
-    background-color: white;
 }
 
 QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
@@ -294,24 +382,81 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
 
 QRadioButton
 {
-    background: @groundBase;
-    color: @mainText;
+    background: transparent;
+    color: #ECEFF4;
+    spacing: 8px;
+}
+
+QRadioButton::indicator
+{
+    width: 16px;
+    height: 16px;
+    border: 2px solid #4C566A;
+    border-radius: 9px;
+    background: #3B4252;
+}
+
+QRadioButton::indicator:hover
+{
+    border-color: #88C0D0;
+}
+
+QRadioButton::indicator:checked
+{
+    background: #88C0D0;
+    border-color: #88C0D0;
 }
 
 QPushButton
 {
+    background: #434C5E;
+    color: #ECEFF4;
+    border: 1px solid #4C566A;
+    border-radius: 8px;
+    padding: 6px 14px;
+    min-height: 18px;
+    font-weight: 500;
+}
+
+QPushButton:hover
+{
+    background: #4C566A;
+    border-color: #5E6779;
+}
+
+QPushButton:pressed
+{
+    background: #3B4252;
+}
+
+QPushButton:disabled
+{
     background: #2E3440;
-    color: @mainText;
+    color: #4C566A;
+    border-color: #3B4252;
 }
 
 QSplitter:handle
 {
-    color: @groundBase;
-    background-color: @groundBase;
+    color: #2E3440;
+    background-color: #2E3440;
+}
+
+QSplitter::handle:vertical
+{
+    height: 1px;
+}
+
+QSplitter::handle:horizontal
+{
+    width: 1px;
 }
 
 QLabel#unstableVersion
 {
-    color: black;
-    background-color: @yellow;
+    color: #2E3440;
+    background-color: #EBCB8B;
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-weight: 600;
 }
