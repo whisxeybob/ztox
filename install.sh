@@ -83,12 +83,12 @@ install_deps_apt() {
   sudo apt-get update -qq
   sudo apt-get install -y --no-install-recommends \
     build-essential cmake ninja-build pkg-config git ca-certificates \
-    qt6-base-dev qt6-svg-dev qt6-tools-dev qt6-tools-dev-tools \
+    qt6-base-dev qt6-tools-dev qt6-tools-dev-tools \
     libqt6svg6-dev libqt6opengl6-dev \
     libsodium-dev libopus-dev libvpx-dev libavcodec-dev libavformat-dev \
     libavutil-dev libswscale-dev libavdevice-dev \
     libsqlcipher-dev libopenal-dev libqrencode-dev libexif-dev \
-    libxss-dev libgtk-3-dev
+    libxss-dev libgtk-3-dev wget file
   ok "apt dependencies installed"
 }
 

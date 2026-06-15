@@ -71,12 +71,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             build-essential cmake ninja-build pkg-config git ca-certificates \
-            qt6-base-dev qt6-svg-dev qt6-tools-dev qt6-tools-dev-tools \
+            qt6-base-dev qt6-tools-dev qt6-tools-dev-tools \
             libqt6svg6-dev libqt6opengl6-dev \
             libsodium-dev libopus-dev libvpx-dev libavcodec-dev libavformat-dev \
             libavutil-dev libswscale-dev libavdevice-dev \
             libsqlcipher-dev libopenal-dev libqrencode-dev libexif-dev \
-            libxss-dev libgtk-3-dev
+            libxss-dev libgtk-3-dev wget file
 
       - name: Build c-toxcore from source
         run: |
@@ -139,18 +139,20 @@ jobs:
         with:
           arch: x64
 
-      - name: Setup vcpkg
-        uses: lukka/run-vcpkg@v11
-        with:
-          vcpkgGitCommitId: 'master'
+      - name: Setup vcpkg (manual clone, avoids action SHA pinning)
+        shell: bash
+        run: |
+          git clone --depth=1 https://github.com/microsoft/vcpkg.git "$RUNNER_TEMP/vcpkg"
+          "$RUNNER_TEMP/vcpkg/bootstrap-vcpkg.bat" -disableMetrics
+          echo "VCPKG_ROOT=$RUNNER_TEMP/vcpkg" >> "$GITHUB_ENV"
 
       - name: Install audio/codec deps via vcpkg
+        shell: bash
         run: |
-          ${VCPKG_ROOT}/vcpkg install \
+          "$VCPKG_ROOT/vcpkg.exe" install \
             libsodium:x64-windows opus:x64-windows libvpx:x64-windows \
             sqlcipher:x64-windows openal-soft:x64-windows ffmpeg:x64-windows \
             libqrencode:x64-windows libexif:x64-windows
-        shell: bash
 
       - name: Build c-toxcore from source
         shell: bash
