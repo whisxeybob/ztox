@@ -1,8 +1,5 @@
 GenericChatroomWidget {
-    background-color: transparent;
-    border-radius: 12px;
-    margin: 2px 8px;
-    padding: 8px 10px;
+    background-color: #2E3440;
 }
 
 GenericChatroomWidget:hover {
@@ -11,13 +8,10 @@ GenericChatroomWidget:hover {
 
 GenericChatroomWidget[active="true"] {
     background-color: #434C5E;
-    border-left: 3px solid #88C0D0;
 }
 
 CroppingLabel#statusMessageLabelObj {
     color: #81A1C1;
-    font-size: 11px;
-    padding-top: 2px;
 }
 
 CroppingLabel#statusMessageLabelObj[active="true"] {
@@ -26,11 +20,8 @@ CroppingLabel#statusMessageLabelObj[active="true"] {
 
 CroppingLabel#nameLabelObj {
     color: #D8DEE9;
-    font-size: 14px;
-    font-weight: 500;
 }
 
 CroppingLabel#nameLabelObj[active="true"] {
     color: #ECEFF4;
-    font-weight: 600;
 }

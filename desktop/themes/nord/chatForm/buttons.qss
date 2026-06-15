@@ -10,11 +10,6 @@ QAbstractButton#emoteButton
     height: 24px;
 }
 
-QAbstractButton#emoteButton:hover
-{
-    background-color: #3B4252;
-}
-
 QAbstractButton#fileButton
 {
     background-image: url("@getImagePath(chatForm/fileButton.svg)");
@@ -23,11 +18,6 @@ QAbstractButton#fileButton
     border-bottom-right-radius: 5px;
     width: 24px;
     height: 24px;
-}
-
-QAbstractButton#fileButton:hover
-{
-    background-color: #3B4252;
 }
 
 QAbstractButton#screenshotButton
@@ -40,15 +30,10 @@ QAbstractButton#screenshotButton
     height: 24px;
 }
 
-QAbstractButton#screenshotButton:hover
-{
-    background-color: #3B4252;
-}
-
 QAbstractButton#sendButton
 {
     background-image: url("@getImagePath(chatForm/sendButton.svg)");
-    background-color: #5E81AC;
+    background-color: #A3BE8C;
     border: none;
     border-radius: 5px;
     width: 50px;
@@ -57,12 +42,12 @@ QAbstractButton#sendButton
 
 QAbstractButton#sendButton:hover
 {
-    background-color: #88C0D0;
+    background-color: #B5CDA1;
 }
 
 QAbstractButton#sendButton:pressed
 {
-    background-color: #5E81AC;
+    background-color: #94AD7D;
 }
 
 /* Header */

@@ -6,30 +6,30 @@ QPushButton[update-available=true]
 
 QPushButton:hover[update-available=true]
 {
-    background-color: #A3BE8C;
+    background-color: #B5CDA1;
     border: none;
 }
 
 QPushButton
 {
-    background-color: @themeDark;
+    background-color: #2E3440;
     border: none;
 }
 
 QPushButton:hover
 {
-    background-color: @themeMediumDark;
+    background-color: #3B4252;
     border: none;
 }
 
 QPushButton:checked
 {
-    background-color: @themeMedium;
+    background-color: #434C5E;
     border: none;
 }
 
 QPushButton:pressed
 {
-    background-color: @themeMediumLight;
+    background-color: #434C5E;
     border: none;
 }
