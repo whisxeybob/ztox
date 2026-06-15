@@ -1,0 +1,42 @@
+# Build artefacts
+desktop/build/
+desktop/build-*/
+desktop/_build/
+desktop/cmake-build-*/
+ios/build/
+ios/DerivedData/
+*.o
+*.a
+*.so
+*.dylib
+
+# IDE
+.vscode/
+.idea/
+*.user
+*.user.*
+*.swp
+.DS_Store
+
+# Qt
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Makefile
+*.qmlc
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# Xcode
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Secrets — never commit
+.env
+.env.local
+*.pem
+*.key
