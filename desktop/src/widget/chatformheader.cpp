@@ -129,13 +129,13 @@ ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* pare
     videoButton =
         createButton("videoButton", this, &ChatFormHeader::videoCallTriggered, settings, style);
 
-    auto* micButtonsLayout = new QVBoxLayout();
-    micButtonsLayout->setSpacing(MIC_BUTTONS_LAYOUT_SPACING);
-    micButtonsLayout->addWidget(micButton, Qt::AlignTop | Qt::AlignRight);
-    micButtonsLayout->addWidget(volButton, Qt::AlignTop | Qt::AlignRight);
+    // ztox: hide always-visible idle mic/vol toggles in the header.
+    // They still exist (signals/slots intact) but are not added to the
+    // layout, so they don't occupy space next to call/video.
+    micButton->hide();
+    volButton->hide();
 
     auto* buttonsLayout = new QGridLayout();
-    buttonsLayout->addLayout(micButtonsLayout, 0, 0, 2, 1, Qt::AlignTop | Qt::AlignRight);
     buttonsLayout->addWidget(callButton, 0, 1, 2, 1, Qt::AlignTop);
     buttonsLayout->addWidget(videoButton, 0, 2, 2, 1, Qt::AlignTop);
     buttonsLayout->setVerticalSpacing(0);
