@@ -2014,15 +2014,15 @@ https://stackoverflow.com/questions/14581498/qt-stylesheet-for-hline-vline-color
 }
 
 .QFrame[frameShape="4"] {
-  max-height: 2px;
+  max-height: 0px;
   border: none;
-  background-color: #434C5E;
+  background-color: transparent;
 }
 
 .QFrame[frameShape="5"] {
-  max-width: 2px;
+  max-width: 0px;
   border: none;
-  background-color: #434C5E;
+  background-color: transparent;
 }
 
 /* QSplitter --------------------------------------------------------------
