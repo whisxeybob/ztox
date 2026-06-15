@@ -146,7 +146,7 @@ build_toxcore_from_source() {
   say "Building c-toxcore from source (no system package available)"
   local src
   src="$(mktemp -d)/c-toxcore"
-  git clone --depth=1 https://github.com/TokTok/c-toxcore.git "$src"
+  git clone --depth=1 --recurse-submodules https://github.com/TokTok/c-toxcore.git "$src"
   cmake -S "$src" -B "$src/_build" -G Ninja \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX="$ZTOX_PREFIX" \

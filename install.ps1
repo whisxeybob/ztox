@@ -74,7 +74,7 @@ function Ensure-Vcpkg {
 function Build-Toxcore {
   $src = Join-Path $env:TEMP "c-toxcore-$(Get-Random)"
   Write-Step "Building c-toxcore from source"
-  git clone --depth 1 https://github.com/TokTok/c-toxcore.git $src
+  git clone --depth 1 --recurse-submodules https://github.com/TokTok/c-toxcore.git $src
   $b = Join-Path $src '_build'
   cmake -S $src -B $b -G Ninja `
     -DCMAKE_BUILD_TYPE=Release `

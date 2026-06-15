@@ -80,7 +80,7 @@ jobs:
 
       - name: Build c-toxcore from source
         run: |
-          git clone --depth=1 https://github.com/TokTok/c-toxcore.git /tmp/c-toxcore
+          git clone --depth=1 --recurse-submodules https://github.com/TokTok/c-toxcore.git /tmp/c-toxcore
           cmake -S /tmp/c-toxcore -B /tmp/c-toxcore/_build -G Ninja \
             -DCMAKE_BUILD_TYPE=Release \
             -DBOOTSTRAP_DAEMON=OFF -DAUTOTEST=OFF \
@@ -157,7 +157,7 @@ jobs:
       - name: Build c-toxcore from source
         shell: bash
         run: |
-          git clone --depth=1 https://github.com/TokTok/c-toxcore.git /c/c-toxcore
+          git clone --depth=1 --recurse-submodules https://github.com/TokTok/c-toxcore.git /c/c-toxcore
           cmake -S /c/c-toxcore -B /c/c-toxcore/_build -G Ninja \
             -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_TOOLCHAIN_FILE="${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" \
